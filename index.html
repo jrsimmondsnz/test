@@ -5,11 +5,22 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | HtmlTest</title>
+    
+    <script type="text/javascript">
+    window.onmessage = (event) => {
+        if (event.data) {
+        console.log(`HTML Component received a message: ${event.data}`);
+        document.getElementById("email").innerHTML = event.data;
+        }
+    }
+    </script>
+    
+    
    </head>
 
   <body>
       <div class="footer">
-        <div class="title">HtmlTest</div>
+        <div id="email">Email: Unknown</div>
       </div>
     </div>
   </body>
