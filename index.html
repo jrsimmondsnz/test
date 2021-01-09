@@ -16,12 +16,16 @@
 		      console.log(userEmail);
         }
       };
+	    
+	 function setEmail() {
+	 	document.getElementById("theLabel").innerHTML = userEmail;
+	 }
     </script>
     
     
    </head>
 
-  <body>
+  <body onload="setEmail()">
       <div class="footer">
         <div id="email">Email: Unknown</div>
       </div>
