@@ -7,12 +7,15 @@
     <title>Unity WebGL Player | HtmlTest</title>
     
     <script type="text/javascript">
-    window.onmessage = (event) => {
+      // when a message is received from the page code
+      var userEmail;
+      window.onmessage = (event) => {
         if (event.data) {
-        console.log(`HTML Component received a message: ${event.data}`);
-        document.getElementById("email").innerHTML = event.data;
+          //document.getElementById("theLabel").innerHTML = event.data;
+          userEmail = event.data;
+		      console.log(userEmail);
         }
-    }
+      };
     </script>
     
     
