@@ -7,19 +7,20 @@
     <title>Unity WebGL Player | HtmlTest</title>
     
     <script type="text/javascript">
+	    console.log("HTML is loaded");
       // when a message is received from the page code
       var userEmail;
       window.onmessage = (event) => {
         if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
           userEmail = event.data;
-		      console.log('Message from wix ' + userEmail);
+		      console.log("Message from wix " + userEmail);
 	SetEmail();
         }
       };
 	    
 	 function SetEmail() {
-		console.log('setEmail fucntion has run');
+		console.log("setEmail fucntion has run");
 	 	document.getElementById("theLabel").innerHTML = userEmail;
 	 }
     </script>
