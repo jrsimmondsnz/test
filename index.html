@@ -11,6 +11,7 @@
       // when a message is received from the page code
       var userEmail;
       window.onmessage = (event) => {
+	      console.log("Message recieved from Wix");
         if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
           userEmail = event.data;
