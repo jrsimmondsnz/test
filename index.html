@@ -14,7 +14,7 @@
       window.parent.postMessage("READY2 ", "*");		
 	    
       window.onmessage = (event) => {
-	      console.log("Message recieved from Wix" + event);
+	      console.log("Message recieved from Wix" + event.data);
         if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
           userEmail = event.data;
