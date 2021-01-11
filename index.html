@@ -7,12 +7,13 @@
     <title>Unity WebGL Player | HtmlTest</title>
     
     <script type="text/javascript">
-	    console.log("HTML is loaded");
-      // when a message is received from the page code
+      console.log("HTML is loaded");
+        
+      window.parent.postMessage("READY2 ", "https://fourfoxcreative.wixsite.com/");	
+	    
+	    console.log("Message should have been sent");
+	    
       var userEmail;
-	    
-      window.parent.postMessage("READY2 ", "https://fourfoxcreative.wixsite.com/");		
-	    
       window.onmessage = (event) => {
 	      console.log("Message recieved from Wix" + event.data);
         if (event.data) {
