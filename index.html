@@ -11,21 +11,21 @@
       // when a message is received from the page code
       var userEmail;
 	    
-      window.parent.postMessage("READY1", "*");		
+      window.parent.postMessage("READY2 ", "*");		
 	    
       window.onmessage = (event) => {
 	      console.log("Message recieved from Wix");
         if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
           userEmail = event.data;
-		      console.log("Message from wix " + userEmail);
+		      console.log("User email is now " + userEmail);
 	SetEmail();
         }
       };
 	    
 	 function SetEmail() {
 		console.log("setEmail fucntion has run");
-	 	document.getElementById("theLabel").innerHTML = userEmail;
+	 	document.getElementById("email").innerHTML = userEmail;
 	 }
     </script>
     
@@ -34,7 +34,7 @@
 
   <body>
       <div class="footer">
-        <span id="email">Email: Unknown 5</span>
+        <span id="email">Email: Unknown 6</span>
       </div>
     </div>
   </body>
