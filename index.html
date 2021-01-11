@@ -14,7 +14,7 @@
       window.parent.postMessage("READY2 ", "*");		
 	    
       window.onmessage = (event) => {
-	      console.log("Message recieved from Wix");
+	      console.log("Message recieved from Wix" + event);
         if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
           userEmail = event.data;
@@ -34,7 +34,7 @@
 
   <body>
       <div class="footer">
-        <span id="email">Email: Unknown 6</span>
+        <span id="email">Email: Unknown 7</span>
       </div>
     </div>
   </body>
