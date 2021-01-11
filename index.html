@@ -10,6 +10,9 @@
 	    console.log("HTML is loaded");
       // when a message is received from the page code
       var userEmail;
+	    
+      window.parent.postMessage("READY1", "*");		
+	    
       window.onmessage = (event) => {
 	      console.log("Message recieved from Wix");
         if (event.data) {
