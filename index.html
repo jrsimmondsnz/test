@@ -10,20 +10,23 @@
       console.log("HTML is loaded");
         
 	    function SendMessage(){
-      		window.parent.postMessage("READY2 ", "https://fourfoxcreative.wixsite.com/htmltest");	
-		    console.log("Message should have been sent");
+      		window.parent.postMessage("READY FROM HTML", "https://fourfoxcreative.wixsite.com/htmltest");	
+		console.log("Message should have been sent");
 	    }
 	    
 	    
 	    
       var userEmail;
       window.onmessage = (event) => {
-	      console.log("Message recieved from Wix" + event.data);
-        if (event.data) {
+	console.log("Message recieved from Wix" + event.data);
+        if (event.data == "READY") {
+		SendMessage();
+		
+		//OLD
           //document.getElementById("theLabel").innerHTML = event.data;
-          userEmail = event.data;
-		      console.log("User email is now " + userEmail);
-	SetEmail();
+          //userEmail = event.data;
+		      //console.log("User email is now " + userEmail);
+	//SetEmail();
         }
       };
 	    
@@ -36,7 +39,7 @@
     
    </head>
 
-  <body onload="SendMessage()">
+  <body>
       <div class="footer">
         <span id="email">Email: Unknown 11</span>
       </div>
