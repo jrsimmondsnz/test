@@ -7,26 +7,13 @@
     <title>Unity WebGL Player | HtmlTest</title>
     
     <script type="text/javascript">
-      console.log("HTML is loaded");
-        
-	    function SendMessage(){
-      		window.parent.postMessage("READY FROM HTML", "https://fourfoxcreative.wixsite.com/htmltest");	
-		console.log("Message should have been sent");
-	    }
-	    
-	    
-	    
       var userEmail;
       window.onmessage = (event) => {
-	console.log("Message recieved from Wix" + event.data);
-        if (event.data == "READY") {
-		SendMessage();
-		
-		//OLD
+        if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
-          //userEmail = event.data;
-		      //console.log("User email is now " + userEmail);
-	//SetEmail();
+          userEmail = event.data;
+		console.log(userEmail);
+		SetEmail();
         }
       };
 	    
